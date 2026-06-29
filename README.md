@@ -21,9 +21,6 @@ I will not provide it myself.
 You can download it [there](https://dbeaver.io/download/) if necessary, or inside the `Software Center` from your company if there is one.
 
 # How to use
-> [!NOTE]
-> Documentation in progress.
-
 ## 1. Where should I place the files?
 Start by placing the `.duckdb` folder into your user profile folder, which you can access by typing `%USERPROFILE%` top-center path bar (or usually with `C:\Users\USERNAME\`), so you can have these 2 paths:
 - C:\Users\USERNAME\.duckdb\duckdb.exe
