@@ -1,3 +1,4 @@
+# Table of content
 - [Disclaimer](#disclaimer)
     - [DuckDB](#duckdb)
     - [Oracle extension](#oracle-extension)
@@ -14,6 +15,8 @@
       <li><a href="#8-configure-dbeavers-bootstrap-queries">Configure DBeaver's Bootstrap Queries</a></li>
       <li><a href="#9-use-oracle_attach-function-to-access-oracle-db-tables">Use oracle_attach() function to access Oracle DB tables</a></li>
     </ol>
+
+___
 
 # Disclaimer
 This repo has been created for a specific purpose.
