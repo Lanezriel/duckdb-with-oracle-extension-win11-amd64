@@ -90,7 +90,10 @@ If not, go to the official [DBeaver Download Page](https://dbeaver.io/download/)
 > For simplicity, we advise you to be on external network for this part, this will be easier.
 
 Once installed, open `DBeaver` and create a new connection.  
-Select `DuckDB` and click on the `Browse...` button on the right of the `path field`, select your `DuckDB file` (created previously), then click on `Test Connection...`.
+Select `DuckDB` and click on the `Browse...` button on the right of the `path field`, select your `DuckDB file` (created previously).  
+Now go to the `Driver properties` tab and look for the `allow_unsigned_extensions` line. Set this one to `true`.  
+If you don't do that, nothing will work as the Oracle extension (as we mentionned in the disclaimer) is unsigned.  
+Once done, go back to `Main` tab and click on `Test Connection...`.
 
 > [!IMPORTANT]
 > At this point, you might encounter an issue for finding the drivers.  
