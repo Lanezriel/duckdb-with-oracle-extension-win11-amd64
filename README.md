@@ -147,3 +147,8 @@ FROM oracle_attach(
 
 > [!NOTE]
 > This query can take a few minutes as it needs to generate the views for every table in the Oracle DB Schema.
+
+As you can see, we used a `full descriptor` for the connection instead of the usual `connection strings`.  
+We decided to go that way in order to `avoid any trouble with the TNS Names`.  
+With the way we did, it should work whether you avec tnsnames.ora or not.  
+We also advise you to not `set a TNS_ADMIN` environment variable with a tnsnames.ora. If you do so, it will check for EVERY CONNECTION and will `slow your process down`.
