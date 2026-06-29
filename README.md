@@ -92,4 +92,58 @@ If so, click on `Finish` and you'll be able to see your `DuckDB` on the left pan
 Test the connection by right clicking on it, selecting `SQL Editor` and `New SQL script`.  
 There you can test with:
 > `SELECT 'Ready to fly' as first_duckdb_query;`
+
 You should directly see the result without error.
+
+## 7. Install Oracle client
+> [!NOTE]
+> I'm not pretty sure the oracle extension required this, but I already had one installed so I couldn't check.  
+> I guess it's still better to have it, just in case.
+
+If you want to connect to Oracle, you should have an Oracle client on your machine, like the `Oracle Client 19c 64bits (19.28.0.0)` for example.
+
+In order to get the Oracle client, if you are behind a company network, please check the `Software Center` first (if your company has one).  
+If there is an Oracle client, then use the one provided by your company.  
+If not, you can download it on the [Official Oracle Instant Client Download Page](https://www.oracle.com/database/technologies/instant-client/downloads.html).
+
+Install it, and you should be alright.
+
+## 8. Configure DBeaver's Bootstrap Queries
+In order to not have to execute statements every time you connect to your `DuckDB`, let's create `Bootstrap Queries`.  
+These queries will automatically run when you initiate a connection to you `DuckDB`.
+
+> [!CAUTION]
+> If one of your `Bootstrap Queries` is not working, you won't be provided with any error message or any tip on what's not working.  
+> If something seems wrong, remove some and retry.  
+> Basically, you should add them one by one and test it every time you add one so you'll know exactly which statement is failing.
+
+Right click on the `DuckDB` on the left panel of `DBeaver`, then select `Edit Connection`.  
+On the new window, append `Connection settings` on the left panel and click on `Initialization`.  
+Click on the `Configure ...` button on the right of `Bootstrap queries`.  
+Add new entries like so:
+- `LOAD oracle;`
+- `LOAD mysql;`
+- `ATTACH 'host=MYSQL_HOST port=MYSQL_PORT user=DB_USER password=DB_USER_PASSWORD database=DB_NAME' AS WHATEVER_NAME_YOU_WANT (TYPE mysql);`
+
+As you can see, we didn't add a statement to attack Oracle DB.  
+The provided extension can do the same ([refer to the extension doc itself for this](https://github.com/rinie/duckdb-oracle)) but we wont.  
+Reason is simple, we need to access schemas that we do not own but where we have, at least, reading rights.  
+Unfortunately, the `ATTACH` method of the extension is only able to show you the schemas that you own, so we'll use a specific function that is not documented at the time of writing: `oracle_attach()`.
+
+## 9. Use oracle_attach() function to access Oracle DB tables
+This function will create views for all the tables of the specified schema, and you'll be able to query these tables in your cross queries.  
+It will also need to be done only once as the views are stored in the `DuckDB` and reloaded everytime.  
+In the DBeaver script window (where you tested the DuckDB connection previously), enter the following query:
+```
+SELECT *
+FROM oracle_attach(
+    'USERNAME/PASSWORD@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=ORACLE_DB_HOST)(PORT=ORACLE_DB_PORT))(CONNECT_DATA=(SERVICE_NAME=ORACLE_DB_SERVICE_NAME)))',
+    source_schema = 'ORACLE_DB_SCHEMA_YOU_WANT_TO_GET_THE_TABLES',
+    sink_schema = 'YOUR_DUCKDB_SCHEMA_WHERE_YOU_WANT_TO_PUT_THE_CREATED_VIEWS',
+    overwrite = true,
+    filter_pushdown = true
+);
+```
+
+> [!NOTE]
+> This query can take a few minutes as it needs to generate the views for every table in the Oracle DB Schema.
