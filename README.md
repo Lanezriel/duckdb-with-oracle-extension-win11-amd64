@@ -57,8 +57,8 @@ If you are having trouble installing it, by being behing a company proxy for exa
 
 ## 5. Install DBeaver
 > [!NOTE]
-> If you want to use the DuckDB CLI, you can skip the next part.
-> But remember that you'll need to understand what's done inside DBeaver in order to adapt it for your CLI usage.
+> If you want to use the DuckDB CLI, you can skip the next part.  
+> But remember that you'll need to understand what's done inside DBeaver in order to adapt it for your CLI usage.  
 > This should not be that hard.
 
 If you are behind a company network, please check your company's `Software Center` first.  
@@ -68,19 +68,19 @@ If not, go to the official [DBeaver Download Page](https://dbeaver.io/download/)
 
 ## 6. Create a DuckDB connection
 > [!WARNING]
-> For this part, you might have trouble installing the drivers from behind a company network.
-> If that's the case, you will need to use an external connection (like sharing your phone's connection)
+> For this part, you might have trouble installing the drivers from behind a company network.  
+> If that's the case, you will need to use an external connection (like sharing your phone's connection)  
 > For simplicity, we advise you to be on external network for this part, this will be easier.
 
 Once installed, open `DBeaver` and create a new connection.  
 Select `DuckDB` and click on the `Browse...` button on the right of the `path field`, select your `DuckDB file` (created previously), then click on `Test Connection...`.
 
 > [!IMPORTANT]
-> At this point, you might encounter an issue for finding the drivers.
-> If you have a message that looks like `org.duckdb...........RELEASE not found`, you'll need to use a simple trick to make the driver discoverable.
-> Go to `Window` dropdown on top of the application and select `Preferences`.
-> Append `Connections` then `Drivers` and select `Maven`.
-> On the right panel, click on `Restore Defaults` then `Apply and Close`.
+> At this point, you might encounter an issue for finding the drivers.  
+> If you have a message that looks like `org.duckdb...........RELEASE not found`, you'll need to use a simple trick to make the driver discoverable.  
+> Go to `Window` dropdown on top of the application and select `Preferences`.  
+> Append `Connections` then `Drivers` and select `Maven`.  
+> On the right panel, click on `Restore Defaults` then `Apply and Close`.  
 > Now if you try to find the driver again, it should show up.
 
 You'll be asked to install the driver for `DuckDB` and you should see a line about the JDBC driver with information about the version (`v1.5.4`).  
