@@ -1,3 +1,18 @@
+- [Disclaimer](#disclaimer)
+    - [DuckDB](#duckdb)
+    - [Oracle extension](#oracle-extension)
+    - [DBeaver](#dbeaver)
+- [How to use](#how-to-use)
+    [1. Where should I place the files?](#1-where-should-i-place-the-files)
+    [2. Configure your environment variable (PATH)](#2-configure-you-environment-variable-path)
+    [3. Create the persistent DuckDB](#3-create-the-persistent-duckdb)
+    [4. Install MySQL extension](#4-install-mysql-extension)
+    [5. Install DBeaver](#5-install-dbeaver)
+    [6. Create a DuckDB connection](#6-create-a-duckdb-connection)
+    [7. Install Oracle client](#7-install-oracle-client)
+    [8. Configure DBeaver's Bootstrap Queries](#8-configure-dbeavers-bootstrap-queries)
+    [9. Use oracle_attach() function to access Oracle DB tables](#9-use-oracle_attach-function-to-access-oracle-db-tables)
+
 # Disclaimer
 This repo has been created for a specific purpose.
 The goal is to make it more easy and efficient to work with `Oracle` and `DuckDB` on a `Windows 11 64bit system`.
@@ -26,7 +41,7 @@ Start by placing the `.duckdb` folder into your user profile folder, which you c
 - C:\Users\USERNAME\.duckdb\duckdb.exe
 - C:\Users\USERNAME\.duckdb\extensions\v1.5.4\windows_amd64\oracle.duckdb_extension
 
-## 2. Configure you environment variable (PATH)
+## 2. Configure your environment variable (PATH)
 Push on the `Windows key` on your keyboard (or click on the `Windows Logo` on the taskbar), then type `env` and you should be able to find `Edit environment variables for your account`.  
 Click on it.
 
