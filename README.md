@@ -3,15 +3,17 @@
     - [Oracle extension](#oracle-extension)
     - [DBeaver](#dbeaver)
 - [How to use](#how-to-use)
-    1. [Where should I place the files?](#1-where-should-i-place-the-files)
-    2. [Configure your environment variable (PATH)](#2-configure-you-environment-variable-path)
-    3. [Create the persistent DuckDB](#3-create-the-persistent-duckdb)
-    4. [Install MySQL extension](#4-install-mysql-extension)
-    5. [Install DBeaver](#5-install-dbeaver)
-    6. [Create a DuckDB connection](#6-create-a-duckdb-connection)
-    7. [Install Oracle client](#7-install-oracle-client)
-    8. [Configure DBeaver's Bootstrap Queries](#8-configure-dbeavers-bootstrap-queries)
-    9. [Use oracle_attach() function to access Oracle DB tables](#9-use-oracle_attach-function-to-access-oracle-db-tables)
+    <ol type="1">
+      <li><a href="#1-where-should-i-place-the-files">Where should I place the files?</a></li>
+      <li><a href="#2-configure-you-environment-variable-path">Configure your environment variable (PATH)</a></li>
+      <li><a href="#3-create-the-persistent-duckdb">Create the persistent DuckDB</a></li>
+      <li><a href="#4-install-mysql-extension">Install MySQL extension</a></li>
+      <li><a href="#5-install-dbeaver">Install DBeaver</a></li>
+      <li><a href="#6-create-a-duckdb-connection">Create a DuckDB connection</a></li>
+      <li><a href="#7-install-oracle-client">Install Oracle client</a></li>
+      <li><a href="#8-configure-dbeavers-bootstrap-queries">Configure DBeaver's Bootstrap Queries</a></li>
+      <li><a href="#9-use-oracle_attach-function-to-access-oracle-db-tables">Use oracle_attach() function to access Oracle DB tables</a></li>
+    </ol>
 
 # Disclaimer
 This repo has been created for a specific purpose.
