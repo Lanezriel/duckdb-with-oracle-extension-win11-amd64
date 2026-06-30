@@ -6,7 +6,7 @@
 - [How to use](#how-to-use)
     <ol type="1">
       <li><a href="#1-where-should-i-place-the-files">Where should I place the files?</a></li>
-      <li><a href="#2-configure-you-environment-variable-path">Configure your environment variable (PATH)</a></li>
+      <li><a href="#2-configure-your-environment-variable-path">Configure your environment variable (PATH)</a></li>
       <li><a href="#3-create-the-persistent-duckdb">Create the persistent DuckDB</a></li>
       <li><a href="#4-install-mysql-extension">Install MySQL extension</a></li>
       <li><a href="#5-install-dbeaver">Install DBeaver</a></li>
