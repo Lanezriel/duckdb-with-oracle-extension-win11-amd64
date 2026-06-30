@@ -145,7 +145,7 @@ Add new entries like so:
 - `LOAD mysql;`
 - `ATTACH 'host=MYSQL_HOST port=MYSQL_PORT user=DB_USER password=DB_USER_PASSWORD database=DB_NAME' AS WHATEVER_NAME_YOU_WANT (TYPE mysql);`
 
-As you can see, we didn't add a statement to attack Oracle DB.  
+As you can see, we didn't add a statement to attach Oracle DB.  
 The provided extension can do the same ([refer to the extension doc itself for this](https://github.com/rinie/duckdb-oracle)) but we wont.  
 Reason is simple, we need to access schemas that we do not own but where we have, at least, reading rights.  
 Unfortunately, the `ATTACH` method of the extension is only able to show you the schemas that you own, so we'll use a specific function that is not documented at the time of writing: `oracle_attach()`.
